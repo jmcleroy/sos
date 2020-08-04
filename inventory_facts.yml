@@ -1,18 +1,27 @@
 ---
-- name: Gather Server Info
-  hosts: all
+- hosts: all
   connection: local
-  gather_facts: false
+  name: Chassis Inventory
+  gather_facts: False
+
+  vars:
+    datatype: ChassisInventory
 
   tasks:
-    - name: Get all information available in all categories
-      redfish_info:
-        category: all
-        command: all
-        baseuri: "172.16.1.210:5000"
-        username: "root"
-        password: "password123456"
-      register: result
 
-    - debug:
-        msg: "{{ result.redfish_facts | to_nice_json }}"
+  - name: Set output file
+    include_tasks: create_output_file.yml
+
+  - name: Get chassis Inventory
+    redfish_info:
+      category: Chassis
+      command: GetChassisInventory
+      baseuri: "172.16.1.210"
+      username: "root"
+      password: "password123456"
+    register: result
+
+  - name: Copy results to output file
+    copy:
+      content: "{{ result | to_nice_json }}"
+      dest: "{{ template }}.json"
