@@ -10,7 +10,7 @@
 
   - name: Get chassis Inventory
     redfish_info:
-      category: "all"
+      category: "Systems"
       command: "all"
       baseuri: "172.16.1.210:5000"
       username: "root"
