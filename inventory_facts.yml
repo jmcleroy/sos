@@ -1,0 +1,17 @@
+---
+- name: Gather Server Info
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Get all information available in all categories
+      redfish_info:
+        category: all
+        command: all
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+      register: result
+
+    - debug:
+        msg: "{{ result.redfish_facts | to_nice_json }}"
