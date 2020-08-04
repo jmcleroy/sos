@@ -3,8 +3,8 @@
   connection: local
   name: Chassis Inventory
   gather_facts: False
-  vars:
-    ansible_python_interpreter: "/usr/bin/python3"
+ # vars:
+ #   ansible_python_interpreter: "/usr/bin/python3"
 
   tasks:
 
