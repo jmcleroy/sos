@@ -8,15 +8,13 @@
 
   tasks:
 
-  - name: Get chassis Inventory
+  - name: Get default inventory information
     redfish_info:
-      category: "System-1"
-      command: "all"
       baseuri: "172.16.1.210:5000"
       username: "root"
       password: "password123456"
     register: result
 
-  - name: Copy results to output file
-    debug:
+  - debug:
       msg: "{{ result.redfish_facts | to_nice_json }}"
+
