@@ -10,11 +10,11 @@
 
   - name: Get default inventory information
     redfish_info:
-      category: "Update"
-      command: "GetFirmwareInventory"
-      baseuri: "172.16.1.210:5000"
-      username: "root"
-      password: "password123456"
+      category: "all"
+      command: "all"
+      baseuri: "192.168.1.202"
+      username: "admin"
+      password: "admin1234!"
     register: result
 
   - debug:
