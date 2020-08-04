@@ -10,6 +10,8 @@
 
   - name: Get default inventory information
     redfish_info:
+      category: Chassis
+      command: GetChassisInventory
       baseuri: "172.16.1.210:5000"
       username: "root"
       password: "password123456"
