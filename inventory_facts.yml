@@ -1,6 +1,7 @@
 ---
 - name: Gather Server Info
   hosts: all
+  connection: local
   gather_facts: false
 
   tasks:
