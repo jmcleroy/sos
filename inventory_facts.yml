@@ -3,8 +3,8 @@
   connection: local
   name: Chassis Inventory
   gather_facts: False
- # vars:
-  #  ansible_python_interpreter: "/usr/bin/python3"
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
 
   tasks:
 
@@ -15,6 +15,7 @@
       baseuri: "192.168.1.199"
       username: "admin"
       password: "admin1234!"
+      timeout: 120
     register: result
 
   - debug:
