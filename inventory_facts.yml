@@ -12,7 +12,7 @@
     redfish_info:
       category: "all"
       command: "all"
-      baseuri: "192.168.1.202"
+      baseuri: "192.168.1.199"
       username: "admin"
       password: "admin1234!"
     register: result
