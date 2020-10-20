@@ -1,23 +1,27 @@
 ---
 - hosts: all
   connection: local
-  name: Chassis Inventory
+  name: Full inventory
   gather_facts: False
-  vars:
-    ansible_python_interpreter: "/usr/bin/python3"
 
   tasks:
 
   - name: Get default inventory information
     redfish_info:
-      category: Chassis
-      command: GetFanInventory
-      baseuri: "192.168.1.199"
-      username: "admin"
-      password: "admin1234!"
+      category: Systems
+      command: all
+      baseuri: "192.168.1.200"
+      username: "redfish"
+      password: "password123"
       timeout: 120
     register: result
 
-  - debug:
-      msg: "{{ result.redfish_facts | to_nice_json }}"
+  - name: Write to file
+    copy:
+      content: '{{ result.redfish_facts | to_nice_json }}'
+      dest: /Users/jmcleroy/Documents/sos/ilo4_systems.txt
+
+#  delegate_to: localhost
+#  - debug:
+#      msg: "{{ result.redfish_facts }}"
 

@@ -1,0 +1,16 @@
+dell:
+  - { name: 'ProcC1E', state: 'Disabled' }
+  - { name: 'ProcCStates', state: 'Disabled' }
+  - { name: 'WriteDataCrc', state: 'Disabled' }
+  - { name: 'UncoreFrequency', state: 'Maximum' }
+  - { name: 'MonitorMwait', state: 'Enabled' }
+  - { name: 'LogicalProc', state: 'Disabled' }
+  - { name: 'CpuInterconnectBusSpeed', state: 'MaxDataRate' }
+  - { name: 'ProcAdjCacheLine', state: 'Disabled' }
+  - { name: 'ProcHwPrefetcher', state: 'Disabled' }
+  - { name: 'ProcSWPrefetcher', state: 'Disabled' }
+  - { name: 'DcuStreamerPrefetcher', state: 'Disabled' }
+  - { name: 'DcuIpPrefetcher', state: 'Disabled' }
+  - { name: 'SubNumaCluster', state: 'Disabled' }
+  - { name: 'UpiPrefetch', state: 'Enabled' }
+  - { name: 'ControlledTurbo', state: 'Disabled' }

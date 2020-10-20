@@ -1,0 +1,26 @@
+---
+- name: Get default information
+  redfish_info:
+    category: Systems
+    command: GetBiosAttributes
+    username: 'root'
+    password: 'Puservan2$'
+#    username: "{{ username }}"
+#    password: "{{ password }}"
+    baseuri: "{{ inventory_hostname }}"
+  register: result
+
+- name: Dell Bios
+  redfish_config:
+    category: Systems
+    command: SetBiosAttributes
+    bios_attribute_name: "{{ item.name }}"
+    bios_attribute_value: "{{ item.state }}"
+    username: 'root'
+    password: 'Puservan2$'
+#    username: "{{ username }}"
+#    password: "{{ password }}"
+    baseuri: "{{ inventory_hostname }}"
+  loop: "{{ dell }}"
+  when:  result.redfish_facts.bios_attribute.entries[0][1]['SystemManufacturer'] == "Dell Inc."
+

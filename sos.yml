@@ -1,0 +1,8 @@
+---
+- name: Son of Spike Bios Settings
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  roles:
+    - sos
