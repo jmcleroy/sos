@@ -4,7 +4,7 @@
     category: Systems
     command: GetBiosAttributes
     username: 'root'
-    password: 'Puservan2$'
+    password: 'root1234'
 #    username: "{{ username }}"
 #    password: "{{ password }}"
     baseuri: "{{ inventory_hostname }}"
@@ -17,7 +17,7 @@
     bios_attribute_name: "{{ item.name }}"
     bios_attribute_value: "{{ item.state }}"
     username: 'root'
-    password: 'Puservan2$'
+    password: 'root1234'
 #    username: "{{ username }}"
 #    password: "{{ password }}"
     baseuri: "{{ inventory_hostname }}"
